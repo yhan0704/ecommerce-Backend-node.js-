@@ -8,7 +8,9 @@
 
 - create file(.env and .gitignore)
 
+- npm install uuid
 
+- npm i body-parser morgan(show console for request)
 
 ----------- learning ---------
 
@@ -25,3 +27,9 @@ connect to database
     useCreateIndex:true,
     useUnifiedTopology:true 
 }).then(()=>console.log('DB Connect'))
+
+DATABASE=mongodb://localhost/ecommerce
+
+
+for uuid => 
+const { v1: uuidv1 } = require('uuid');

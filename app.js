@@ -1,25 +1,35 @@
-const express = require('express')
-const mongoose = require('mongoose')
-require('dotenv').config()
+const express = require("express");
+const mongoose = require("mongoose");
+const morgan = require("morgan");
+const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
+require("dotenv").config();
 
+//import routes
+const userRoutes = require("./routes/user");
 
 //app
-const app = express()
+const app = express();
 
 //db
-mongoose.connect(process.env.DATABASE, {
-    useNewUrlParser:true,
-    useCreateIndex:true,
-    useUnifiedTopology:true 
-}).then(()=>console.log('DB Connect'))
+mongoose
+  .connect(process.env.DATABASE, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("DB Connect"));
 
-//routes
-app.get('/', (req, res) => {
-    res.send('<h1>Hello from express  afwaef</h1>')
-})
+//middlewares
+app.use(morgan("dev"));
+app.use(bodyParser.json());
+app.use(cookieParser());
 
-const port = process.env.PORT || 8000
+//routes middleware
+app.use("/api", userRoutes);
 
-app.listen(port)
+const port = process.env.PORT || 8000;
 
-module.export = app
+app.listen(port);
+
+module.export = app;
