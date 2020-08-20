@@ -12,6 +12,10 @@
 
 - npm i body-parser morgan(show console for request)
 
+- npm i express-validator
+
+- npm i express-jwt jsonwebtoken
+
 ----------- learning ---------
 
 - require('dotenv').config()   <- for .env file
