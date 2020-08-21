@@ -16,6 +16,8 @@
 
 - npm i express-jwt jsonwebtoken
 
+- npm i formidable(for upload file) lodash * 
+
 ----------- learning ---------
 
 - require('dotenv').config()   <- for .env file
