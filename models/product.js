@@ -9,7 +9,7 @@ const productSchema = new mongoose.Schema(
       required: true,
       maxlength: 32,
     },
-    discription: {
+    description: {
       type: String,
       tequired: true,
       maxlength: 2000,

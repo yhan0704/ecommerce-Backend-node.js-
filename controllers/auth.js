@@ -5,7 +5,6 @@ const { errorHandler } = require("../helpers/dbErrorHandler");
 
 //for admin
 exports.signup = (req, res) => {
-  console.log(req.body);
   const user = new User(req.body);
   //save in the database
   user.save((err, user) => {
