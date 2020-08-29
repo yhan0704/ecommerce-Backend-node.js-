@@ -18,6 +18,8 @@
 
 - npm i formidable(for upload file) lodash * 
 
+- npm i cors
+
 ----------- learning ---------
 
 - require('dotenv').config()   <- for .env file
